@@ -1,0 +1,17 @@
+server:
+  port: 7000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: gateway-service
+zuul:
+  routes:
+    userservice:
+      path: /user/**
+      serviceId: http://localhost:9002
+
